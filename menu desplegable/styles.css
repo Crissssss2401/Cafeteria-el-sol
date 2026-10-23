@@ -1,0 +1,96 @@
+/* ===== VERSIÓN PARA COMPUTADORA ===== */
+
+.header {
+  background-color: #010509;
+  color: rgb(233, 108, 18);
+  padding: 20px;
+
+  display: flex; /* modica las proporciones */
+  justify-content: space-between; /* distribuye el espacio entre los elementos*/
+  align-items: center; 
+}
+body {
+  background-image: url('fondo.png');
+  background-size: cover;
+}
+
+.logo {
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.menu a:hover {
+  color: #ee9d22;
+}
+
+/* El botón no aparece en computadora */
+.boton-menu {
+  display: none;
+}
+
+/* ===== VERSIÓN PARA TELÉFONO ===== */
+
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: column; /* Dirección de los elementos */
+    align-items: stretch; /* Alinea los elementos al ancho del contenedor */
+  }
+
+  .navegacion {
+    margin-top: 15px; /* Espacio superior para el menú en teléfono */
+  }
+
+  /* El botón aparece en teléfono */
+  .boton-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 100%;
+    padding: 12px;
+
+    background-color: #ee9d22;
+    color: #000000;
+
+    border: none;
+    border-radius: 20px;
+
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* El menú comienza oculto */
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+
+    margin-top: 10px;
+    background-color: #0b0a08;
+  }
+
+  /* Esta clase muestra el menú */
+  .menu.activo {
+    display: flex;
+  }
+
+  .menu a {
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #ffffff4d;
+  }
+}
