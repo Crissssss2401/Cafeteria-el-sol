@@ -1,163 +1,92 @@
- 
- *{
-  box-sizing: border-box; /* Incluye el padding y border en el ancho total */
-}
- 
- body{
-    background-color: rgb(253, 249, 249);
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif, sans-serif;
-    padding: 20px;
-    }
+/* ===== VERSIÓN PARA COMPUTADORA ===== */
 
+.header {
+  background-color: #163a5f;
+  color: white;
+  padding: 20px;
 
-p{ 
-    color: rgb(11, 10, 5);
-    font-size: 20px;
-    text-align: center;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-
-h1{
-    color: rgb(211, 23, 17);
-    font-size: 50px;
-    text-align: center;
-    padding: 20px;
+.logo {
+  margin: 0;
 }
 
-.destacado{
-    color: rgb(2, 216, 138);
-    font-size: 30px;
-    text-align: center;
-    padding: 20px;
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-#titulo-principal{
-    color: rgb(104, 136, 2);
-    font-size: 30px;
-    text-align: center;
-    padding: 20px;
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
 }
 
-@media (max-width: 768px) { /* Ajustes para pantallas más pequeñas */
-  nav a{ /* Ajusta el tamaño de fuente para pantallas más pequeñas */
-    flex-direction: column;     /*  Organiza los elementos del menú en una columna */
-    align-items: stretch;  /* Estira los elementos del menú para que ocupen todo el ancho disponible */
-    display: block;    /* Muestra los elementos del menú como bloques */
-    text-align: center; /* Centra el texto de los elementos del menú */
-    background-color: rgb(100, 83, 5); /* Mantiene el color de fondo del menú */
+.menu a:hover {
+  color: #25d366;
+}
+
+/* El botón no aparece en computadora */
+.boton-menu {
+  display: none;
+}
+
+/* ===== VERSIÓN PARA TELÉFONO ===== */
+
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
   }
-}
 
-nav{
-   
-    justify-content: center; /* Centra los elementos del menú horizontalmente */
-    align-items: center; /* Centra los elementos del menú verticalmente */
+  .navegacion {
+    margin-top: 15px;
+  }
 
-    padding-top: 7px; /* Ajusta el espacio de relleno según tus necesidades */
-    margin : 0px; /* Agrega un margen alrededor del menú */
-    border-radius: 10px; /*agrega un borde redondeado al menú */
-    display: flex; /* Utiliza Flexbox para organizar los elementos del menú */
-    flex-direction:row; /* Organiza los elementos en una fila */
-    gap: 100px; /* Agrega un espacio de pixeles ntre los elementos del menú */
-    background-color: rgb(237, 194, 0);
- 
-    flex-wrap: wrap; /* permite que los elementos se envuelvan a la siguiente línea si no caben en la fila */
+  /* El botón aparece en teléfono */
+  .boton-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 
-    position: fixed; /* Mantiene el menú fijo en la parte superior de la página */
-    top: 0; /* Posiciona el menú en la parte superior de la página */
-    left: 0; /* Posiciona el menú en la parte izquierda de la página */
-    right: 0; /* Posiciona el menú en la parte derecha de la página */
+    width: 100%;
+    padding: 12px;
 
-    }
+    background-color: #25d366;
+    color: #163a5f;
 
+    border: none;
+    border-radius: 6px;
 
-    table{
-    width: 100%; /* Ajusta el ancho de la tabla al 100% del contenedor */
-    Border-collapse: collapse; /* Separa los bordes de las celdas */
-    border: 3px solid rgb(5, 11, 32); /* Agrega un borde negro a la tabla */
-    padding: 100px; /* Ajusta el espacio de relleno según tus necesidades */
-    background-color: beige;
-    text-align: left;
-    }
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
-    td,th{
-        border: 3px solid rgb(0, 0, 0);
-        padding: 10px; /*El padding contiene el contenido de las celdas */
-        text-align: left;
-    }
+  /* El menú comienza oculto */
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
 
-    th { 
-        background-color: #1D3557; color: rgb(246, 245, 245); 
-    }
+    margin-top: 10px;
+    background-color: #163a5f;
+  }
 
-    td:hover{
-        background-color: chartreuse;
-    }
-    th:hover{ /* el :hover lo que hace es resaltar el contenido al pasar el cursor sobre el elemento*/
-        background-color: rgb(0, 255, 153);
-    }
+  /* Esta clase muestra el menú */
+  .menu.activo {
+    display: flex;
+  }
 
-
-/*Clase Formulario*/
-    .formulario{ /*creamos una clase para el formulario */
-        width: 90%; /* Ajusta el ancho del formulario al 90% del contenedor */
-        max-width: 1100px; /* Establece el ancho máximo del formulario */
-        margin: 0 auto; /* Centra el formulario horizontalmente */
-        background-color: rgb(170, 170, 245);
-        font-family: 'Times New Roman', Times, serif;
-        text-align: center;
-    }
-
-    .formulario input, .formulario textarea{
-        width: 100%;
-        padding: 10px;
-        margin: 5px;
-        box-sizing: border-box; /* Incluye el padding y border en el ancho total */
-        border-radius: 20px ;
-
-    }
-
-    .formulario button{
-
-        padding: 10px 20px;
-        margin: 5px;
-        border: 2px solid rgb(10, 14, 13);
-        border-radius: 5px;
-        background-color: rgb(0, 255, 153);
-        color: rgb(2, 2, 2);
-        cursor: pointer;
-    }
-
-    .formulario input:focus, .formulario textarea:focus{ 
-        border-color: #fd3b00; outline: none; 
-    }
-
-
-    .mensaje{
-        text-align: center;
-        font-size: 20px;    
-        color: rgb(158, 140, 7);
-        background-color: rgb(169, 233, 207);
-    }
-
-
-    .galeria{
-    width: 200px;  /* Ajusta el ancho de la galería */
-    height: auto;/*    Ajusta la altura de la galería automáticamente */    
-}
-
-.tarjetas{
-  display: flex; /* Utiliza Flexbox para organizar las tarjetas */
-  justify-content: center; /* Centra las tarjetas horizontalmente */    
-  flex-wrap: wrap; /*permite que las tarjetas se envuelvan a la siguiente línea si no caben en la fila */
-  gap: 1.25rem;  /* Agrega un espacio de 1.25rem entre las tarjetas */
-  background-color: antiquewhite;
-}
-
-.tarjeta{
-  flex: 1 1 250px;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid #ccc;
+  .menu a {
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #ffffff4d;
+  }
 }
